@@ -9,10 +9,6 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
                 crossorigin="anonymous">
         <style>
-                .btn {
-                        margin: 5px;
-                }
-
                 .opaco {
                         opacity: 1.0;
                 }
@@ -24,11 +20,12 @@
 
                 .memo-game {
                         width: 500px;
-                        height: 880px;
+                        
                         display: flex;
-
+                        flex-wrap: wrap;
                         justify-content: center;
                         align-content: center;
+                        
 
                 }
 
@@ -37,6 +34,7 @@
                         display: flex;
                         flex-direction: column;
                         position: relative;
+                       
                 }
 
                 .memo-card {
@@ -57,11 +55,10 @@
 
                 .card-container {
                         width: 500px;
-                        height: 500px;
                         display: flex;
                         flex-wrap: wrap;
                         justify-content: center;
-                        align-content: center;
+                        align-content: stretch;
                 }
         </style>
 </head>
@@ -72,7 +69,7 @@
                 <div class="memo-board">
                         <div class="card-container">
 
-                                <div class="container">
+                                <div>
                                         <h1 class="display-4">Memo Game</h1>
                                         <p class="lead">Este es un juego de memoria.Seleccione un par coincidente dispones
                                                 de 20 intentos.</p>
@@ -82,91 +79,90 @@
 
 
                         <div class="card-container">
-                                <div class="memo-card" data-value="opera">
-                                        <img class="oculto" src="images/ask.svg">
-                                        <img class="opaco" src="images/opera.svg">
+                                <div class="memo-card" data-value="opera" onclick="mostrar(this)">
+                                        <img id="ask" src="images/ask.svg">
+                                        <img id="card" class="oculto"  src="images/opera.svg">
                                 </div>
-                                <div class="memo-card" data-value="chrome">
-                                        <img class="oculto" src="images/ask.svg">
-                                        <img class="opaco" src="images/chrome.svg">
+                                <div class="memo-card" data-value="chrome" onclick="mostrar(this)">
+                                        <img id="ask" class="opaco" src="images/ask.svg">
+                                        <img id="card" class="oculto" src="images/chrome.svg">
                                 </div>
-                                <div class="memo-card" data-value="firefox">
-                                        <img class="oculto" src="images/ask.svg">
-                                        <img class="opaco" src="images/firefox.svg">
+                                <div class="memo-card" data-value="firefox" onclick="mostrar(this)">
+                                        <img id="ask" class="opaco" src="images/ask.svg">
+                                        <img id="card" class="oculto" src="images/firefox.svg">
                                 </div>
-                                <div class="memo-card" data-value="facebook">
-                                        <img class="oculto" src="images/ask.svg">
-                                        <img class="opaco" src="images/facebook.svg">
+                                <div class="memo-card" data-value="facebook" onclick="mostrar(this)">
+                                        <img id="ask" class="opaco" src="images/ask.svg">
+                                        <img id="card" class="oculto" src="images/facebook.svg">
                                 </div>
-                                <div class="memo-card" data-value="google">
-                                        <img class="oculto" src="images/ask.svg">
-                                        <img class="opaco" src="images/google-icon.svg">
+                                <div class="memo-card" data-value="google" onclick="mostrar(this)">
+                                        <img id="ask" class="opaco" src="images/ask.svg">
+                                        <img id="card" class="oculto" src="images/google-icon.svg">
                                 </div>
-                                <div class="memo-card" data-value="html5">
-                                        <img class="oculto" src="images/ask.svg">
-                                        <img class="opaco" src="images/html-5.svg">
+                                <div class="memo-card" data-value="html5" onclick="mostrar(this)">
+                                        <img id="ask" class="opaco" src="images/ask.svg">
+                                        <img id="card" class="oculto" src="images/html-5.svg">
                                 </div>
-                                <div class="memo-card" data-value="twitter">
-                                        <img class="oculto" src="images/ask.svg">
-                                        <img class="opaco" src="images/twitter.svg">
+                                <div class="memo-card" data-value="twitter" onclick="mostrar(this)">
+                                        <img id="ask" class="opaco" src="images/ask.svg">
+                                        <img id="card" class="oculto" src="images/twitter.svg">
                                 </div>
-                                <div class="memo-card" data-value="instagram">
-                                        <img class="oculto" src="images/ask.svg">
-                                        <img class="opaco" src="images/instagram-icon.svg">
+                                <div class="memo-card" data-value="instagram" onclick="mostrar(this)">
+                                        <img id="ask" class="opaco" src="images/ask.svg">
+                                        <img id="card" class="oculto" src="images/instagram-icon.svg">
                                 </div>
-                                <div class="memo-card" data-value="explorer">
-                                        <img class="oculto" src="images/ask.svg">
-                                        <img class="opaco" src="images/internetexplorer.svg">
+                                <div class="memo-card" data-value="explorer" onclick="mostrar(this)">
+                                        <img id="ask" class="opaco" src="images/ask.svg">
+                                        <img id="card" class="oculto" src="images/internetexplorer.svg">
                                 </div>
-                                <div class="memo-card" data-value="javascript">
-                                        <img class="oculto" src="images/ask.svg">
-                                        <img class="opaco" src="images/javascript.svg">
+                                <div class="memo-card" data-value="javascript" onclick="mostrar(this)">
+                                        <img id="ask" class="opaco" src="images/ask.svg">
+                                        <img id="card" class="oculto" src="images/javascript.svg">
                                 </div>
-                                <div class="memo-card" data-value="opera">
-                                        <img class="oculto" src="images/ask.svg">
-                                        <img class="opaco" src="images/opera.svg">
+                                <div class="memo-card" data-value="opera" onclick="mostrar(this)">
+                                        <img id="ask" class="opaco" src="images/ask.svg">
+                                        <img id="card" class="oculto" src="images/opera.svg">
                                 </div>
-                                <div class="memo-card" data-value="chrome">
-                                        <img class="oculto" src="images/ask.svg">
-                                        <img class="opaco" src="images/chrome.svg">
+                                <div class="memo-card" data-value="chrome" onclick="mostrar(this)">
+                                        <img id="ask" class="opaco" src="images/ask.svg">
+                                        <img id="card" class="oculto" src="images/chrome.svg">
                                 </div>
-                                <div class="memo-card" data-value="firefox">
-                                        <img class="oculto" src="images/ask.svg">
-                                        <img class="opaco" src="images/firefox.svg">
+                                <div class="memo-card" data-value="firefox" onclick="mostrar(this)">
+                                        <img id="ask" class="opaco" src="images/ask.svg">
+                                        <img id="card" class="oculto" src="images/firefox.svg">
                                 </div>
-                                <div class="memo-card" data-value="facebook">
-                                        <img class="oculto" src="images/ask.svg">
-                                        <img class="opaco" src="images/facebook.svg">
+                                <div class="memo-card" data-value="facebook" onclick="mostrar(this)">
+                                        <img id="ask" class="opaco" src="images/ask.svg">
+                                        <img id="card" class="oculto" src="images/facebook.svg">
                                 </div>
-                                <div class="memo-card" data-value="google">
-                                        <img class="oculto" src="images/ask.svg">
-                                        <img class="opaco" src="images/google-icon.svg">
+                                <div class="memo-card" data-value="google" onclick="mostrar(this)">
+                                        <img id="ask" class="opaco" src="images/ask.svg">
+                                        <img id="card" class="oculto" src="images/google-icon.svg">
                                 </div>
-                                <div class="memo-card" data-value="html5">
-                                        <img class="oculto" src="images/ask.svg">
-                                        <img class="opaco" src="images/html-5.svg">
+                                <div class="memo-card" data-value="html5" onclick="mostrar(this)">
+                                        <img id="ask" class="opaco" src="images/ask.svg">
+                                        <img id="card" class="oculto" src="images/html-5.svg">
                                 </div>
-                                <div class="memo-card" data-value="instagram">
-                                        <img class="oculto" src="images/ask.svg">
-                                        <img class="opaco" src="images/instagram-icon.svg">
+                                <div class="memo-card" data-value="instagram" onclick="mostrar(this)">
+                                        <img id="ask" class="opaco" src="images/ask.svg">
+                                        <img id="card" class="oculto" src="images/instagram-icon.svg">
                                 </div>
-                                <div class="memo-card" data-value="explorer">
-                                        <img class="oculto" src="images/ask.svg">
-                                        <img class="opaco" src="images/internetexplorer.svg">
+                                <div class="memo-card" data-value="explorer" onclick="mostrar(this)">
+                                        <img id="ask" class="opaco" src="images/ask.svg">
+                                        <img id="card" class="oculto" src="images/internetexplorer.svg">
                                 </div>
-                                <div class="memo-card" data-value="javascript">
-                                        <img class="oculto" src="images/ask.svg">
-                                        <img class="opaco" src="images/javascript.svg">
+                                <div class="memo-card" data-value="javascript" onclick="mostrar(this)">
+                                        <img id="ask" class="opaco" src="images/ask.svg">
+                                        <img id="card" class="oculto" src="images/javascript.svg">
                                 </div>
-                                <div class="memo-card" data-value="twitter">
-                                        <img class="oculto" src="images/ask.svg">
-                                        <img class="opaco" src="images/twitter.svg">
+                                <div class="memo-card" data-value="twitter" onclick="mostrar(this)">
+                                        <img id="ask" class="opaco" src="images/ask.svg">
+                                        <img id="card" class="oculto" src="images/twitter.svg">
                                 </div>
                                 <div class="card-container">
                                         <div class="footer">
                                                 <label class="text-center">Contador de Intentos</label>
-                                                <button onclick="leerOperacion('-')" type="button" class="btn btn-info">RESET</button>
-                                                </ul>
+                                                <button onclick="reiniciar()" type="button" class="btn btn-info">RESET</button>
                                         </div>
                                 </div>
                         </div>

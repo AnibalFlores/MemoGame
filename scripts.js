@@ -1,12 +1,15 @@
-
+// Ejercicio de Práctica Memo-Game
+// UTN Paraná TSP Laboratorio 4
+// Alumno: Flores Aníbal H.
+// 25-08-2018
 
 // Función para obtener elementos
-var el = function (element) {
-    if (element.charAt(0) === "#") { // Si me pasan un ID...
-        return document.querySelector(element); // ... devuelve un elemento único
+var el = function (elemento) {
+    if (elemento.charAt(0) === "#") { // Si paso un ID...
+        return document.querySelector(elemento); // ... devuelvo un elemento único
     }
 
-    return document.querySelectorAll(element); // Sino, devuelve un nodelist
+    return document.querySelectorAll(elemento); // Sino, devuelvo un nodelist
 };
 
 // Variables
@@ -63,7 +66,7 @@ var quita_clic = function (id) {
 };
 
 var tantos = function () {
-    //tanteador.innerHTML = "C1: " + carta1 + " V1: " + valor1 + " C2: " + carta2 + " V2: " + valor2 + " D:" + destapadas + " i: " + intentos;
+    //tanteador.innerHTML = "C1: " + carta1 + " V1: " + valor1 + " C2: " + carta2 + " V2: " + valor2 + " D:" + destapadas + " I: " + intentos;
     tanteador.innerHTML = " Total de intentos: " + intentos;
 };
 
@@ -74,17 +77,18 @@ var mostrar = function (p) {
             carta1 = p.dataset.id;
             destapadas = 1;
             cambia(carta1);
-            tantos();
+            
         } else {
             if (destapadas == 1 && p.dataset.id != carta1 && p.dataset.id != carta2) {
                 valor2 = p.dataset.value;
                 carta2 = p.dataset.id;
                 destapadas = 2;
-                intentos++;
+                intentos++;//considero un intento a un par de cartas y lo cuento 
                 if (limite == intentos) { alert("Límite de intentos alcanzado"); reiniciar(); }
                 cambia(carta2);
-                tantos();
+                
             }
+            tantos();//mostramos los intentos
         }
 
 

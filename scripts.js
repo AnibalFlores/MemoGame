@@ -20,8 +20,8 @@ var tanteador = el("#intentos"), // Etiqueta donde se muestra total intentos
     valor2 = "", // valor segunda carta elegida
     intentos = 0, // Contador de intentos
     limite = 20, // limite intentos
-    aciertos = 0;
-destapadas = 0;
+    aciertos = 0,
+    destapadas = 0;
 
 var cambia = function (id) {
 
@@ -77,7 +77,7 @@ var mostrar = function (p) {
             carta1 = p.dataset.id;
             destapadas = 1;
             cambia(carta1);
-            
+
         } else {
             if (destapadas == 1 && p.dataset.id != carta1 && p.dataset.id != carta2) {
                 valor2 = p.dataset.value;
@@ -86,7 +86,7 @@ var mostrar = function (p) {
                 intentos++;//considero un intento a un par de cartas y lo cuento 
                 if (limite == intentos) { alert("Límite de intentos alcanzado"); reiniciar(); }
                 cambia(carta2);
-                
+
             }
             tantos();//mostramos los intentos
         }
